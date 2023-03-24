@@ -17,7 +17,7 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'project_name',
+        name: 'projectName',
         message: 'What is your project\'s name?'
     },
     {
@@ -29,17 +29,19 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'What kind of license should your project have?',
-        choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'None']
+        choices: ['MIT', 'APACHE2.0', 'GPL3.0', 'None']
     },
     {
         type: 'input',
-        name: 'init_cmd',
-        message: 'What command should be run to install dependencies?'
+        name: 'initCMD',
+        message: 'What command should be run to install dependencies?',
+        default: 'npm install'
     },
     {
         type: 'input',
-        name: 'test_cmd',
-        message: 'What command should be run to run tests?'
+        name: 'testCMD',
+        message: 'What command should be run to run tests?',
+        default: 'npm run test'
     },
     {
         type: 'input',
@@ -52,14 +54,59 @@ const questions = [
         message: 'What does the user need to know about contrubuting to the repo?'
     }
 ];
+// Function to generate text
+const generateMD = ({username, email, projectName, description, license, initCMD, testCMD, usage, contribution }) =>
+`
+# ${projectName}
+[!GitHub license](https://img.shields.io/badge/license-${license}-brightgreen)
 
+## Description
+${description}
+
+## Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contribiuting](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
+
+## Instalation
+To install necessary dependencies, run the following command:
+\`\`\`
+${initCMD}
+\`\`\`
+
+## Usage
+${usage}
+
+## License
+This project is licensed under the $ selected license ${license}.
+
+## Contributing
+${contribution}
+
+## Tests
+To run tests, run the following command:
+\`\`\`
+${testCMD}
+\`\`\`
+
+## Questions
+If you have any questions about the repo, open an issue or contact me directly at ${email}. You can find more of my work at [${username}](https://github.com/${username})
+`;
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) =>
+    err ? console.log(err) : console.log("README.md created.")
+    );
+}
 
 // TODO: Create a function to initialize app
 function init() {
-    prompt([...questions]).then((response) => {
-        console.log(response);
+    prompt([...questions]).then((answers) => {
+        const readmeContent = generateMD(answers);
+        writeToFile(fileName, readmeContent);
     })
 };
 
