@@ -2,3 +2,4 @@ node_modules/
 project.md
 .DS_Store/
 readme-example.md
+package-lock.json
