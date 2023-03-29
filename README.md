@@ -24,7 +24,7 @@
   Clone the repo and run `npm i`, then use `node index.js` to start application. Follow prompts and you should a README file created.
 
   ## License
-  This project is not licensed.
+  This project is licensed under the MIT License.
 
   ## Contributing
   Follow best practices, such as commenting your code, testing your changes, and following coding standards.
