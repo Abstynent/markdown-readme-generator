@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const { prompt } = require('inquirer');
-const generateMarkdown = require('./utils/generateMarkdown')
+const generateMarkdown = require('./assets/utils/generateMarkdown')
 const fileName = "./created-README.md";
 
 // TODO: Create an array of questions for user input
