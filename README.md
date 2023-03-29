@@ -1,6 +1,6 @@
 
   # Markdown README Generator
-  
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
   ## Description
   A markdown README generator is a tool that automates the process of creating a README file for a project using Markdown syntax. A README file is a document that 
@@ -21,19 +21,13 @@
   ```
 
   ## Usage
-  Clone the repo and run 'npm i', then use 'node index.js' to start application. Follow prompts and you should a README file created.
+  Clone the repo and run `npm i`, then use `node index.js` to start application. Follow prompts and you should a README file created.
 
   ## License
   This project is not licensed.
 
   ## Contributing
   Follow best practices, such as commenting your code, testing your changes, and following coding standards.
-
-  ## Tests
-  To run tests, run the following command:
-  ```
-  npm run test
-  ```
 
   ## Questions
   If you have any questions about the repo, open an issue or contact me directly at luk.jur@outlook.com. You can find more of my work at [Abstynent](https://github.com/Abstynent)
