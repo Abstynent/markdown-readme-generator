@@ -21,7 +21,7 @@
   ```
 
   ## Usage
-  Clone the repo and run `npm i`, then use `node index.js` to start application. Follow prompts and you should a README file created.
+  Clone the repo and run `npm i`, then use `node index.js` to start application. Follow prompts and you should have a README file created.
 
   ## License
   This project is licensed under the MIT License.
