@@ -12,6 +12,16 @@ function renderLicenseBadge(license) {
       return "";
   }
 }
+// Function to render license section in README file
+function renderLicenseSection(license) {
+  if(license==="None") {
+    return `## License
+    This project is not licensed.`;
+  } else {
+    return `## License
+    This project is licensed under the ${data.license}.`
+  }
+};
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
@@ -39,8 +49,7 @@ function generateMarkdown(data) {
   ## Usage
   ${data.usage}
 
-  ## License
-  This project is licensed under the $ selected license ${data.license}.
+  ${renderLicenseSection(data.license)}
 
   ## Contributing
   ${data.contribution}
